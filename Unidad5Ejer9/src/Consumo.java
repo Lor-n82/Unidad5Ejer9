@@ -22,10 +22,10 @@ public class Consumo {
     //constructores
 
     public Consumo(double kms, double litros, double vmed, double combustible) {
-        this.kms = kms;
-        this.litros = litros;
-        this.vmed = vmed;
-        this.combustible = combustible;
+        this.setKms(kms);
+        this.setLitros(litros);
+        this.setVmed(vmed);
+        this.setCombustible(combustible); 
     }
 
     //metodos
@@ -38,6 +38,23 @@ public class Consumo {
         public double consumoEuros(){
         return (kms*litros/100)*DIESEL;
         }
+
+    public void setKms(double kms) {
+        this.kms = kms;
+    }
+
+    public void setLitros(double litros) {
+        this.litros = litros;
+    }
+
+    public void setVmed(double vmed) {
+        this.vmed = vmed;
+    }
+
+    public void setCombustible(double combustible) {
+        this.combustible = combustible;
+    }
+        
 
     @Override
     public String toString() {
