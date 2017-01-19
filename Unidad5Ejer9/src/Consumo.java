@@ -18,14 +18,14 @@ public class Consumo {
         private double kms;
         private double litros;
         private double vmed;
-        private double combustible;
+        private int combustible;
     //constructores
 
-    public Consumo(double kms, double litros, double vmed, double combustible) {
+    public Consumo(double kms, double litros, double vmed, int combustible) {
         this.setKms(kms);
         this.setLitros(litros);
         this.setVmed(vmed);
-        this.setCombustible(combustible); 
+        this.setPgas(combustible); 
     }
 
     //metodos
@@ -36,7 +36,14 @@ public class Consumo {
         return kms*litros/100;
         }
         public double consumoEuros(){
-        return (kms*litros/100)*DIESEL;
+            if (combustible==0)
+                return (kms*litros/100)*GASOLINA95;
+            else if (combustible==1)
+                return (kms*litros/100)*GASOLINA98;
+            else if (combustible==2)
+                return(kms*litros/100)*DIESEL;
+            
+            return (kms*litros/100)*GASOLINA98;
         }
 
     public void setKms(double kms) {
@@ -51,17 +58,17 @@ public class Consumo {
         this.vmed = vmed;
     }
 
-    public void setCombustible(double combustible) {
+    public void setPgas(int combustible) {
         this.combustible = combustible;
     }
         
 
     @Override
     public String toString() {
-        return "\nkms= " + kms + 
-                "\nlitros= " + litros + 
-                "\nvmed=" + vmed + 
-                "\nTipo de combustible=" + tipoCombustible[0];
+        return "\nHas introducido= " + kms + " Kms"+ 
+                "\nTotal carburante= " + litros +" Litos"+ 
+                "\nVelocidad media= " + vmed + "Kms/h"+
+                "\nTipo de combustible= " + tipoCombustible[combustible];
     }
         
 }
