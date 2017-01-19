@@ -93,7 +93,7 @@ public class Consumo {
     public String toString() {
         return "\nHas introducido= " + kms + " Kms"
                 + "\nTotal carburante= " + litros + " Litos"
-                + "\nVelocidad media= " + vmed + "Kms/h"
+                + "\nVelocidad media= " + vmed + " Kms/h"
                 + "\nTipo de combustible= " + tipoCombustible[combustible];
     }
 
